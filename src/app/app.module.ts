@@ -12,6 +12,7 @@ import { AppModuleAdmin } from './modules/admin/app.module';
 import { AppModuleAuth } from './modules/authen/app.module';
 import { AppModuleCommun } from './modules/commun/app.module';
 import { AppModuleCourses } from './modules/courses/app.module';
+import { AppModuleMenu } from './modules/menu/app.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { AppModuleCourses } from './modules/courses/app.module';
     AppModuleAuth,
     AppModuleCommun,
     AppModuleCourses,
-    AppModuleCommun
+    AppModuleMenu
   ],
   providers: [],
   bootstrap: [AppComponent]
