@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import {environment} from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material-ui.module';
+import { AppModuleAdmin } from './modules/admin/app.module';
+import { AppModuleAuth } from './modules/authen/app.module';
+import { AppModuleCommun } from './modules/commun/app.module';
+import { AppModuleCourses } from './modules/courses/app.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,12 @@ import { MaterialModule } from './material-ui.module';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AppModuleAdmin,
+    AppModuleAuth,
+    AppModuleCommun,
+    AppModuleCourses,
+    AppModuleCommun
   ],
   providers: [],
   bootstrap: [AppComponent]
