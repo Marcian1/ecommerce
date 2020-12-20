@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/modules/authen/services/login.service';
 
 @Component({
   selector: 'app-menu-top',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuTopComponent implements OnInit {
 
-  constructor() { }
+  constructor(private login: LoginService) { }
 
   ngOnInit(): void {
+  }
+  logout(): void
+  {
+    this.login.logoutWithGoogle();
   }
 
 }
