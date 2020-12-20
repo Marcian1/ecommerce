@@ -16,4 +16,8 @@ export class LoginService {
        this.login
       .signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
+  logoutWithGoogle(): any
+  {
+    return this.login.signOut();
+  }
 }
