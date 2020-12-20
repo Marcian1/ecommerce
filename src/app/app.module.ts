@@ -32,7 +32,7 @@ import { AppModuleOrder } from './modules/orders/app.module';
     AppModuleCommun,
     AppModuleCourses,
     AppModuleMenu,
-    AppModuleOrder
+    AppModuleOrder,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,4 +20,10 @@ export class LoginService {
   {
     return this.login.signOut();
   }
+  getCurrentUser(): any
+  {
+    return this.login.authState;
+
+  }
+
 }
