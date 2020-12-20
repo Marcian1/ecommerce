@@ -4,15 +4,16 @@ import { CanActivate, Router } from '@angular/router';
 import firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { UserService } from '../../users/services/user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService implements CanActivate{
 
-  constructor(private login: AngularFireAuth, private router: Router) {
+  constructor(private login: AngularFireAuth, private router: Router, private serviceUser: UserService) {
     this.login.authState
-    .subscribe(user => console.log(user));
+    .subscribe(user =>  this.serviceUser.saveUser(user));
   }
 
   loginWithGoogle(): any {
@@ -23,7 +24,7 @@ export class LoginService implements CanActivate{
   {
     this.router.navigate(['/login']);
     return this.login.signOut();
-    
+
   }
   getCurrentUser(): any
   {
