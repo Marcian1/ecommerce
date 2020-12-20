@@ -14,6 +14,7 @@ import { AppModuleCommun } from './modules/commun/app.module';
 import { AppModuleCourses } from './modules/courses/app.module';
 import { AppModuleMenu } from './modules/menu/app.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
