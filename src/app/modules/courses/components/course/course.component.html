@@ -1,1 +1,79 @@
-<p>course works!</p>
+<mat-card>
+    <mat-card-title>
+        <div>Add Course</div>
+    </mat-card-title>
+
+    <mat-card-content>
+            <table class="table">
+                <tr>
+                    <td>
+                        <mat-form-field class="field">
+                            <input formControlName="Title" matInput name="Title" placeholder="Title">
+                        </mat-form-field>
+                        <mat-error>
+                            <span>
+                                    Please enter the title !!!
+                            </span>
+                         </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="field">
+                            <textarea  formControlName="Description" matInput name="Description" matTextareaAutosize matAutosizeMinRows="2"
+                                matAutosizeMaxRows="5" placeholder="Description"></textarea>
+                        </mat-form-field>
+                        <mat-error>
+                        <span>
+                                Please enter the description !!!
+                        </span>
+                    </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <mat-form-field>
+                            <input type="number" formControlName="Price" matInput placeholder="Price">
+                        </mat-form-field>
+                        <mat-error>
+                        <span>
+                                Please enter the price !!!
+                        </span>
+                    </mat-error>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <mat-form-field class="field">
+                            <input matInput formControlName="UrlImage" placeholder="UrlImage">
+                        </mat-form-field>
+                        <mat-error>
+                        <span>
+                                Please enter the URL Image !!!
+                        </span>
+                    </mat-error>
+
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <mat-form-field>
+                            <mat-select placeholder="Select Categorie" formControlName="Categorie">
+                                <mat-option>-- Select Any --</mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                        <td  class="content-center">
+                            <button mat-raised-button color="accent">Submit</button>
+                        </td>
+                    </tr>
+            </table>
+    </mat-card-content>
+</mat-card>
