@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminCoursesComponent } from './modules/admin/components/admin-courses/admin-courses.component';
+import { AdminService } from './modules/admin/services/admin.service';
 import { LoginComponent } from './modules/authen/components/login/login.component';
 import { LoginService } from './modules/authen/services/login.service';
 import { AboutComponent } from './modules/commun/components/about/about.component';
@@ -33,7 +34,7 @@ const routes: Routes = [
   {
     path: 'admin-courses',
     component: AdminCoursesComponent,
-    canActivate: [ LoginService ]
+    canActivate: [ LoginService , AdminService]
   }
 
 ];
