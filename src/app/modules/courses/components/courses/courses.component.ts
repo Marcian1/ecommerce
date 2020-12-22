@@ -16,7 +16,7 @@ export class CoursesComponent implements OnInit, OnDestroy {
   categories: any[] = [];
   courses: any[] = [];
   sub: Subscription = new Subscription();
-
+  coursesShoppingCart: any[] = [];
   constructor(private serviceCategorie: CategorieService,
               private serviceCourses: CourseService,
               private serviceShoppingCart: ShoppingCartService) { }
@@ -24,10 +24,12 @@ export class CoursesComponent implements OnInit, OnDestroy {
    this.sub = this.serviceCategorie.getAllCategories()
                         .pipe(
                           mergeMap(categories => this.serviceCourses.getAllCourses().pipe(
-                            map(courses => [categories , courses])
-                          ))).subscribe(([categories, courses]) => {
+                            mergeMap(courses => this.serviceShoppingCart.getListItemsShoppingCart().pipe(
+                              map(coursesShopping => [categories, courses, coursesShopping])))
+                          ))).subscribe(([categories, courses, coursesShopping]) => {
                             this.categories = categories;
                             this.courses = courses;
+                            this.coursesShoppingCart = coursesShopping;
                             console.log(courses);
                             console.log(categories);
                           });
@@ -43,6 +45,14 @@ export class CoursesComponent implements OnInit, OnDestroy {
   {
     console.log(course);
     this.serviceShoppingCart.AddToCart(course);
+  }
+  existCourseInShoppingCart(key: any): boolean
+  {
+   return this.coursesShoppingCart.find((course: any) => course.key === key);
+  }
+  DeleteToCart(course: { key: any; }): void
+  {
+    this.serviceShoppingCart.deleteCourseShoppingCart(course.key);
   }
 
 }
