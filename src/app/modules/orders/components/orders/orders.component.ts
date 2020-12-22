@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/modules/authen/services/login.service';
+import { PaymentService } from 'src/app/modules/payment/services/payment.service';
 import { ShoppingCartService } from 'src/app/modules/shoppingCart/services/shopping-cart.service';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-orders',
@@ -10,12 +13,16 @@ import { ShoppingCartService } from 'src/app/modules/shoppingCart/services/shopp
 export class OrdersComponent implements OnInit {
   coursesOrder: any[] = [];
   displayedColumns: string[] = ['title', 'urlImage', 'price'];
+  user: any;
 
-  constructor(private shoppingCart: ShoppingCartService, private router: Router) { }
+  constructor(private shoppingCart: ShoppingCartService, private router: Router,
+              private loginService: LoginService, private paymentService: PaymentService, private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.shoppingCart.getListItemsShoppingCartMapCourses()
     .subscribe((courses: any[]) => this.coursesOrder = courses);
+    this.loginService.getCurrentUserDb()
+                     .subscribe(user => this.user = user);
   }
 
   getTotal(): any
@@ -33,7 +40,32 @@ export class OrdersComponent implements OnInit {
     this.router.navigate(['/courses']);
 
   }
-  OnPay(): void{
+
+  async OnPay(): Promise<any>
+  {
+    // Create the order
+    const order = {
+      dateCreated: new Date().getTime(),
+      userId: this.user.id,
+      items: this.coursesOrder,
+      total: this.getTotal(),
+      paid: true
+    };
+    const orderResult: any = await this.orderService.createOrder(order);
+    // this.shoppingCart.clearShpoppingCart();
+    // this.router.navigate(['/success-orde',orderResult.key]);
+   // Clear the shopping Cart
+
+   // let resultPayment =this.paymentService.payment(orderResult.key,this.getTotal());
+   // if(resultPayment)
+   // {
+     // Update the order with paid=true
+   // }
+  // else
+  // {
+     // Update the order with paid=false
+  // }
+
 
   }
 
