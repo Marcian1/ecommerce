@@ -16,6 +16,7 @@ import { AppModuleMenu } from './modules/menu/app.module';
 import { AppModuleOrder } from './modules/orders/app.module';
 import { AppModuleUsers } from './modules/users/app.module';
 import { AppModuleShoppingCart } from './modules/shoppingCart/app.module';
+import { AppModulePayment } from './modules/payment/app.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -35,7 +36,8 @@ import { AppModuleShoppingCart } from './modules/shoppingCart/app.module';
     AppModuleMenu,
     AppModuleOrder,
     AppModuleUsers,
-    AppModuleShoppingCart
+    AppModuleShoppingCart,
+    AppModulePayment
   ],
   providers: [],
   bootstrap: [AppComponent]
