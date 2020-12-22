@@ -52,7 +52,7 @@ export class OrdersComponent implements OnInit {
       paid: true
     };
     const orderResult: any = await this.orderService.createOrder(order);
-    // this.shoppingCart.clearShpoppingCart();
+    this.shoppingCart.clearShpoppingCart();
     // this.router.navigate(['/success-orde',orderResult.key]);
    // Clear the shopping Cart
 
