@@ -8,6 +8,7 @@ import { AboutComponent } from './modules/commun/components/about/about.componen
 import { HomeComponent } from './modules/commun/components/home/home.component';
 import { CoursesComponent } from './modules/courses/components/courses/courses.component';
 import { OrdersComponent } from './modules/orders/components/orders/orders.component';
+import { SuccesOrderComponent } from './modules/orders/components/succes-order/succes-order.component';
 import { ShoppingCartComponent } from './modules/shoppingCart/components/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
@@ -40,8 +41,13 @@ const routes: Routes = [
   {
     path: 'shooping-cart',
     component: ShoppingCartComponent
-  }
+  },
 
+  {
+    path: 'success-orde/:id',
+    component: SuccesOrderComponent,
+    canActivate: [LoginService]
+  },
 ];
 
 @NgModule({
