@@ -45,7 +45,7 @@ export class LoginService implements CanActivate{
                        })
                      );
   }
-  getCurrentUserDb(): any
+  getCurrentUserDb(): Observable<any>
   {
     return this.login.authState
                      .pipe(
