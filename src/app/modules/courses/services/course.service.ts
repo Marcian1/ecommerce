@@ -67,4 +67,9 @@ export class CourseService {
      }
      );
    }
+   deleteCourse(id: string): any
+   {
+     return this.db.object('/courses/' + id).remove();
+   }
+
 }

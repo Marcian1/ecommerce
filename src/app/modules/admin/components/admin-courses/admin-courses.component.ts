@@ -32,4 +32,9 @@ export class AdminCoursesComponent implements OnInit {
       width: '650px', data: {id: row.key}
     });
   }
+  Delete(row: { key: string; }): void
+  {
+    if (window.confirm('Are sure you want to delete this course ?')) { this.serviceCourse.deleteCourse(row.key); }
+
+  }
 }
