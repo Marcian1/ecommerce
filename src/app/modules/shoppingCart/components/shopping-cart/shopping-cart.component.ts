@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ShoppingCartService } from '../../services/shopping-cart.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ShoppingCartComponent implements OnInit {
   coursesShopping: any[] = [];
   displayedColumns: string[] = ['title', 'description', 'urlImage', 'price', 'actions'];
 
-  constructor(private shoppingCart: ShoppingCartService) { }
+  constructor(private shoppingCart: ShoppingCartService, private router: Router) { }
 
   ngOnInit(): void {
     this.shoppingCart.getListItemsShoppingCartMapCourses()
@@ -19,6 +20,7 @@ export class ShoppingCartComponent implements OnInit {
   getTotal(): any
   {
     let total = 0;
+    if (!this.coursesShopping) { return total; }
     this.coursesShopping.forEach(course => {
       total = total + course.price;
     });
@@ -27,6 +29,10 @@ export class ShoppingCartComponent implements OnInit {
   Delete(row: { key: string; }): void
   {
     this.shoppingCart.deleteCourseShoppingCart(row.key);
+  }
+  OnNext(): void
+  {
+    this.router.navigate(['/orders']);
   }
 
 }

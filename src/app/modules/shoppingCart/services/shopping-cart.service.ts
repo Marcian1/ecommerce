@@ -86,4 +86,9 @@ getListItemsShoppingCartMapCourses(): any
             ));
 
   }
+  clearShpoppingCart(): void
+  {
+    const cartId = localStorage.getItem('cartId');
+    this.db.object('/shoppingCart/' + cartId + '/items/').remove();
+  }
 }
