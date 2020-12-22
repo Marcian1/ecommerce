@@ -39,3 +39,8 @@
   .cardListItem {
     flex: 0 1 calc(30% - 20px);
   }
+  .price
+  {
+    font-size: medium;
+    font-weight: bold; 
+  }

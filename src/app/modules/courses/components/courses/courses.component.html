@@ -12,9 +12,10 @@
                                             <p class="description">
                                                     {{course.description}}
                                             </p>
+                                            <span fxLayoutAlign="center center"  class="price">{{course.price | currency}}</span>
                                     </mat-card-content>
                                     <mat-card-actions fxLayout="row" fxLayoutAlign="center center" >
-                                            <button fxFlex mat-flat-button color="primary">Add Course</button>
+                                            <button fxFlex mat-flat-button color="primary" (click)="AddToCart(course)">Add Course</button>
                                     </mat-card-actions>
                             </mat-card>
                     </ng-container>
