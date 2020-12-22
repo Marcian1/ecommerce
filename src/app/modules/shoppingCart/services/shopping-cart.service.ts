@@ -67,4 +67,23 @@ deleteCourseShoppingCart(id: string): any
     const cartId = localStorage.getItem('cartId');
     return this.db.object('/shoppingCart/' + cartId + '/items/' + id).remove();
   }
+
+
+getListItemsShoppingCartMapCourses(): any
+{
+    const cartId = localStorage.getItem('cartId');
+    return this.db.list('/shoppingCart/' + cartId + '/items/')
+            .snapshotChanges()
+            .pipe(
+
+              map(courses =>
+                      courses.map(c => (
+                           {
+
+                             key: c.payload.key, ...(c.payload.val() as any).course
+                           }
+                           ))
+            ));
+
+  }
 }

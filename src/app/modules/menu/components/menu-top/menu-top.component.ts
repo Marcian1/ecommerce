@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, mergeMap, switchMap } from 'rxjs/operators';
 import { LoginService } from 'src/app/modules/authen/services/login.service';
@@ -12,7 +13,7 @@ import { ShoppingCartService } from 'src/app/modules/shoppingCart/services/shopp
 export class MenuTopComponent implements OnInit {
   user: any;
   nbrShoppingCourse = 0;
-  constructor(private login: LoginService, private shoppingCart: ShoppingCartService) { }
+  constructor(private login: LoginService, private shoppingCart: ShoppingCartService,  private router: Router) { }
 
   ngOnInit(): void {
     this.login.getCurrentUser()
@@ -49,4 +50,10 @@ export class MenuTopComponent implements OnInit {
     this.login.logoutWithGoogle();
   }
 
+  recapShopping(): void
+  {
+    if (this.nbrShoppingCourse <= 0) { return ; }
+    this.router.navigate(['/shooping-cart']);
+
+  }
 }
