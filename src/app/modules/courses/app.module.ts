@@ -5,11 +5,13 @@ import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CourseComponent } from './components/course/course.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CourseContentComponent } from './components/course-content/course-content.component';
 
 @NgModule({
   declarations: [
   CoursesComponent,
-  CourseComponent],
+  CourseComponent,
+  CourseContentComponent],
   imports: [
   MaterialModule,
   CommonModule,

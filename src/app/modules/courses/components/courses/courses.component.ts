@@ -6,6 +6,7 @@ import {mergeMap, map, switchMap} from 'rxjs/operators';
 import { ShoppingCartService } from 'src/app/modules/shoppingCart/services/shopping-cart.service';
 import { LoginService } from 'src/app/modules/authen/services/login.service';
 import { OrderService } from 'src/app/modules/orders/services/order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses',
@@ -25,7 +26,8 @@ export class CoursesComponent implements OnInit, OnDestroy {
               private serviceCourses: CourseService,
               private serviceShoppingCart: ShoppingCartService,
               private loginService: LoginService,
-              private orderService: OrderService) { }
+              private orderService: OrderService,
+              private router: Router) { }
 
   ngOnInit(): void {
    this.sub = this.serviceCategorie.getAllCategories()
@@ -95,4 +97,9 @@ export class CoursesComponent implements OnInit, OnDestroy {
     return this.courseAcces.find((course: any) => course.key === key);
   }
 
+  AccessCourse(key: any): void
+  {
+    this.router.navigate(['/course-content', key]);
+
+  }
 }

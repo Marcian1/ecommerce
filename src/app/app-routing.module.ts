@@ -6,6 +6,7 @@ import { LoginComponent } from './modules/authen/components/login/login.componen
 import { LoginService } from './modules/authen/services/login.service';
 import { AboutComponent } from './modules/commun/components/about/about.component';
 import { HomeComponent } from './modules/commun/components/home/home.component';
+import { CourseContentComponent } from './modules/courses/components/course-content/course-content.component';
 import { CoursesComponent } from './modules/courses/components/courses/courses.component';
 import { OrdersComponent } from './modules/orders/components/orders/orders.component';
 import { SuccesOrderComponent } from './modules/orders/components/succes-order/succes-order.component';
@@ -48,6 +49,11 @@ const routes: Routes = [
     component: SuccesOrderComponent,
     canActivate: [LoginService]
   },
+  {
+    path: 'course-content/:id',
+    component: CourseContentComponent,
+    canActivate: [LoginService]
+  }
 ];
 
 @NgModule({

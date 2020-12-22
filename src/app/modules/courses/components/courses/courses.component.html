@@ -21,7 +21,7 @@
                                         <button fxFlex mat-flat-button color="warn" (click)="DeleteToCart(course)  && !ExistCoursesById(course.key)">Delete Course</button>
                                 </mat-card-actions>
                                 <mat-card-actions fxLayout="row" fxLayoutAlign="center center" *ngIf="ExistCoursesById(course.key)">
-                                        <button fxFlex mat-flat-button color="accent" >Access Course</button>
+                                        <button fxFlex mat-flat-button color="accent" (click)="AccessCourse(course.key)">Access Course</button>
                                </mat-card-actions>
                             </mat-card>
                     </ng-container>
