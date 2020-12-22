@@ -34,4 +34,37 @@ export class CourseService {
       urlImage: course.urlImage
      });
    }
+
+   getCoursebyId(uid: string): Observable<any>
+   {
+    return this.db.object('/courses/' + uid)
+            .snapshotChanges()
+            .pipe(
+              map(course => {
+                const obj: any = course.payload.val();
+                const courseTemp: Course = {
+                  id: course.key as any,
+                  categorie: obj.categorie,
+                  description: obj.description,
+                  price: obj.price,
+                  title: obj.title,
+                  urlImage: obj.urlImage
+                };
+                return courseTemp;
+              })
+            );
+   }
+
+   updateCourse(course: Course): any
+   {
+      console.log(course.title);
+      return this.db.object('/courses/' + course.id).update({
+      title: course.title,
+      description: course.description,
+      categorie: course.categorie,
+      price: course.price,
+      urlImage: course.urlImage
+     }
+     );
+   }
 }

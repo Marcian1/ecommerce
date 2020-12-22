@@ -26,4 +26,10 @@ export class AdminCoursesComponent implements OnInit {
     });
 
   }
+  Edit(row: { key: any; }): void
+  {
+    this.serviceDialog.open(CourseComponent, {
+      width: '650px', data: {id: row.key}
+    });
+  }
 }

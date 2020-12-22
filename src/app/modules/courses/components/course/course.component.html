@@ -20,8 +20,8 @@
                 <tr>
                     <td>
                         <mat-form-field class="field">
-                            <textarea  formControlName="Description" matInput name="Description" matTextareaAutosize matAutosizeMinRows="2"
-                                matAutosizeMaxRows="5" placeholder="Description"></textarea>
+                            <textarea  formControlName="Description" matInput name="Description" [matTextareaAutosize]=true [matAutosizeMinRows]=2
+                                [matAutosizeMaxRows]=5 placeholder="Description"></textarea>
                         </mat-form-field>
                         <mat-error>
                         <span *ngIf="!regiForm.get('Description').valid && regiForm.get('Description').touched">
@@ -70,7 +70,7 @@
                         </mat-form-field>
                         <mat-error>
                                 <span *ngIf="!regiForm.get('Categorie').valid && regiForm.get('Categorie').touched">
-                                        Please enter the categorie Image !!!
+                                        Please enter the categorie Type !!!
                                 </span>
                         </mat-error>
                     </td>
