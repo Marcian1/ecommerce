@@ -15,6 +15,7 @@ import { AppModuleCourses } from './modules/courses/app.module';
 import { AppModuleMenu } from './modules/menu/app.module';
 import { AppModuleOrder } from './modules/orders/app.module';
 import { AppModuleUsers } from './modules/users/app.module';
+import { AppModuleShoppingCart } from './modules/shoppingCart/app.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -33,7 +34,8 @@ import { AppModuleUsers } from './modules/users/app.module';
     AppModuleCourses,
     AppModuleMenu,
     AppModuleOrder,
-    AppModuleUsers
+    AppModuleUsers,
+    AppModuleShoppingCart
   ],
   providers: [],
   bootstrap: [AppComponent]

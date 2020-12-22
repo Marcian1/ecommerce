@@ -14,6 +14,6 @@
            
         </mat-menu>
         <a mat-button [routerLink]="'/about'">About</a>
-        <a mat-button> 0<i class="material-icons"> add_shopping_cart</i></a>
+        <a mat-button (click)="recapShopping()"> <span class='shopping-course'>{{ nbrShoppingCourse }}</span> <i class="material-icons">add_shopping_cart</i> </a>
       </mat-toolbar-row>
 </mat-toolbar>
