@@ -31,9 +31,9 @@ export class MenuTopComponent implements OnInit {
               .subscribe(( arr: any[]    )  => {
                 const userDb = arr[0];
                 const coursesShopping = arr[1];
+                this.nbrShoppingCourse = (coursesShopping as any[]).length;
                 if (userDb !== 'e')
                 {
-                  this.nbrShoppingCourse = (coursesShopping as any[]).length;
                   this.user = userDb;
                 }
                 else {
