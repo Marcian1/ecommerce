@@ -2,6 +2,7 @@
     <mat-tab *ngFor="let categorie of categories" [label]="categorie.label">
             <div class="cardList">
                     <ng-container *ngFor="let course of getCoursesByCategorie(categorie.key)">
+                            
                             <mat-card class="cardListItem example-card">
                                     <mat-card-header>
                                             <div mat-card-avatar class="example-header-image"></div>
@@ -24,6 +25,7 @@
                                         <button fxFlex mat-flat-button color="accent" (click)="AccessCourse(course.key)">Access Course</button>
                                </mat-card-actions>
                             </mat-card>
+
                     </ng-container>
             </div>
     </mat-tab>
