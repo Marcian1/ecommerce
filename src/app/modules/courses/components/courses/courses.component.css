@@ -1,6 +1,6 @@
 .example-card {
     width: 660px;
-    height: 600px;
+    height: 620px;
   }
   mat-card
   {
@@ -10,6 +10,8 @@
     object-fit: cover; /*this makes de image in src fit to the size of specified below*/
     width: 80%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
     height: 50%;
+    display: inline-block;
+    padding: 50px;
   }
   .description {
       font: 1em sans-serif;
@@ -30,8 +32,9 @@
   }
   /* Column Gap */
   .cardList > * {
-    box-sizing: border-box;
+    box-sizing:content-box;
   }
+
   .cardList > *:not(:last-child) {
     margin-right: 20px;
   }
