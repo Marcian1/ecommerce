@@ -47,6 +47,7 @@ export class MenuTopComponent implements OnInit {
 }
   logout(): void
   {
+    this.user = null;
     this.login.logoutWithGoogle();
   }
 
@@ -55,5 +56,9 @@ export class MenuTopComponent implements OnInit {
     if (this.nbrShoppingCourse <= 0) { return ; }
     this.router.navigate(['/shooping-cart']);
 
+  }
+  justLogin(): void
+  {
+     this.login.loginWithGoogle();
   }
 }
