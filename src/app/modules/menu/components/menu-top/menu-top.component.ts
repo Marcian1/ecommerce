@@ -61,4 +61,7 @@ export class MenuTopComponent implements OnInit {
   {
      this.login.loginWithGoogle();
   }
+  open(menu: { openMenu: () => void; }): void{
+    menu.openMenu();
+    }
 }
