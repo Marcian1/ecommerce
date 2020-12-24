@@ -23,7 +23,7 @@ export class LoginService implements CanActivate{
 
   logoutWithGoogle(): any
   {
-    this.router.navigate(['/courses']);
+    this.router.navigate(['/']);
     return this.login.signOut();
 
   }

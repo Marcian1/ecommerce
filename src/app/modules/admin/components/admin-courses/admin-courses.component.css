@@ -6,3 +6,8 @@
 {
     margin-bottom: 3%;
 }
+
+td,th {
+    font-weight:bold;
+    font-family:cursive;
+  }
