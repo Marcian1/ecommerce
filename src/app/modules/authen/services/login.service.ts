@@ -20,9 +20,10 @@ export class LoginService implements CanActivate{
        this.login
       .signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
+
   logoutWithGoogle(): any
   {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/courses']);
     return this.login.signOut();
 
   }
@@ -53,8 +54,9 @@ export class LoginService implements CanActivate{
                         try
                         {
                          if (!user) {
+                           const obj = new Observable<any>();
                            console.log('USER IS NULL!');
-                           return null; }
+                           return obj; }
                          return   this.serviceUser.getUserByuid(user.uid);
                         }
                         catch (error)
