@@ -11,7 +11,7 @@ import { CourseService } from 'src/app/modules/courses/services/course.service';
 export class AdminCoursesComponent implements OnInit {
 
   courses: any[] = [];
-  displayedColumns: string[] = ['title', 'description', 'categorie', 'urlImage', 'price', 'actions'];
+  displayedColumns: string[] = ['title', 'categorie',  'price', 'actions'];
   constructor(private serviceCourse: CourseService, private serviceDialog: MatDialog) { }
 
   ngOnInit(): void {

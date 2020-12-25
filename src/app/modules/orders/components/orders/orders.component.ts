@@ -12,7 +12,7 @@ import { OrderService } from '../../services/order.service';
 })
 export class OrdersComponent implements OnInit {
   coursesOrder: any[] = [];
-  displayedColumns: string[] = ['title', 'urlImage', 'price'];
+  displayedColumns: string[] = ['title', 'categorie', 'price'];
   user: any;
 
   constructor(private shoppingCart: ShoppingCartService, private router: Router,
