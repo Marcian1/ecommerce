@@ -1,4 +1,4 @@
-<h1>The summary order </h1>
+<h1>The Summary Order </h1>
 
 <table mat-table [dataSource]="coursesOrder" class="mat-elevation-z8">
 
@@ -29,11 +29,24 @@
 
 
 <mat-card class="example-card">
-    <mat-card-header fxLayoutAlign="end center">
-      <mat-card-title class="card-container-left">Total : {{getTotal() | currency}} </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-    </mat-card-content>
+  
+    <ng-container>
+    <div *ngIf="getNumberOfPurchasedCourses() >= 3; then thenBlock else elseBlock"></div>
+
+    <ng-template #thenBlock >
+    <label class='total'><s>Total : {{getTotalVechi() | currency}}</s></label>
+    </ng-template>
+
+    <ng-template #elseBlock >
+    <label class='total'>Total : {{getTotalVechi() | currency}}</label>
+    </ng-template>
+    <br>
+    <br>
+    <ng-template [ngIf]="getNumberOfPurchasedCourses() >= 3"><div class ="total" white-space: pre-line> You have benefited from a 30% discount for the purchase of more than 3 courses!</div></ng-template>
+    <br>
+    <mat-card-content *ngIf = "getNumberOfPurchasedCourses() >= 3" class="total"> Total Price After Discount: {{getTotal() | currency}} </mat-card-content>
+    </ng-container>
+
     <mat-card-actions fxLayoutAlign="space-between end">
       <button  mat-raised-button color="accent" (click)="OnCancel()">Cancel</button>
       <button   mat-raised-button color="accent" (click)="OnPay()">Pay</button>
