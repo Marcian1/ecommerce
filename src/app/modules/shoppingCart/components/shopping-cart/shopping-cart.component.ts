@@ -9,7 +9,7 @@ import { ShoppingCartService } from '../../services/shopping-cart.service';
 })
 export class ShoppingCartComponent implements OnInit {
   coursesShopping: any[] = [];
-  displayedColumns: string[] = ['title', 'description', 'urlImage', 'price', 'actions'];
+  displayedColumns: string[] = ['title',  'price', 'actions'];
 
   constructor(private shoppingCart: ShoppingCartService, private router: Router) { }
 
