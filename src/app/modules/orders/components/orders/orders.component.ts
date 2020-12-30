@@ -25,7 +25,8 @@ export class OrdersComponent implements OnInit {
                      .subscribe(user => this.user = user);
   }
 
-  getTotal(): any
+
+  getTotalVechi(): any
   {
     let total = 0;
     if (!this.coursesOrder) { return total; }
@@ -33,6 +34,30 @@ export class OrdersComponent implements OnInit {
       total = total + course.price;
     });
     return total;
+  }
+
+  getTotal(): any
+  {
+    let total = 0;
+    let count = 0;
+    if (!this.coursesOrder) { return total; }
+    this.coursesOrder.forEach(course => {
+      total = total + course.price;
+      count++;
+    });
+    if (count >= 3) {
+      total = total * 0.70;
+    }
+    return total;
+  }
+
+  getNumberOfPurchasedCourses(): any{
+    let count = 0;
+    if (!this.coursesOrder) { return count; }
+    this.coursesOrder.forEach(course => {
+      count = count + 1;
+    });
+    return count;
   }
 
   OnCancel(): void
@@ -65,8 +90,6 @@ export class OrdersComponent implements OnInit {
   // {
      // Update the order with paid=false
   // }
-
-
   }
 
 }
