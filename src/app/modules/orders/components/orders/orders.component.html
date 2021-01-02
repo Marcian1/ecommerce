@@ -7,18 +7,18 @@
   
     <!-- Position Column -->
     <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <th mat-header-cell *matHeaderCellDef style="text-align:center" > Title </th>
       <td mat-cell *matCellDef="let element" style="width: 25%;"> {{element.title}} </td>
     </ng-container>
 
     <ng-container matColumnDef="categorie">
-      <th mat-header-cell *matHeaderCellDef> &nbsp; Categorie </th>
-      <td mat-cell *matCellDef="let element" style="width: 35%;"> &nbsp; {{element.categorie}} </td>
+      <th mat-header-cell *matHeaderCellDef style="text-align:center" > Categorie </th>
+      <td mat-cell *matCellDef="let element" style="width: 35%;"> {{element.categorie}} </td>
     </ng-container>
   
 
     <ng-container matColumnDef="price">
-        <th mat-header-cell *matHeaderCellDef> &nbsp; Price</th>
+        <th mat-header-cell *matHeaderCellDef style="text-align:center"> Price</th>
         <td mat-cell *matCellDef="let element" style="width: 25%;"> {{element.price | currency }} </td>
       </ng-container>
  
@@ -48,8 +48,8 @@
     </ng-container>
 
     <mat-card-actions fxLayoutAlign="space-between end">
-      <button  mat-raised-button color="accent" (click)="OnCancel()">Cancel</button>
-      <button   mat-raised-button color="accent" (click)="OnPay()">Pay</button>
+      <button  mat-raised-button color="primary" (click)="OnCancel()">Cancel</button>
+      <button   mat-raised-button color="primary" (click)="OnPay()">Pay</button>
     </mat-card-actions>
 </mat-card>
 <br>
