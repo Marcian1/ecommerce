@@ -1,27 +1,12 @@
 # Ecommerce
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+Photo1
+![Ecommerce 2](https://user-images.githubusercontent.com/62359701/114873449-f7896800-9e03-11eb-97e6-cd389923f46e.png)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Photo2
+![Ecommerce](https://user-images.githubusercontent.com/62359701/114873456-f9532b80-9e03-11eb-9b0a-6562bc247953.png)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Photo3
+![image](https://user-images.githubusercontent.com/62359701/114873532-08d27480-9e04-11eb-857d-045a64029abf.png)
