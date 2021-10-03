@@ -1,47 +1,29 @@
-import {​​ Component, Inject, OnInit }​​ from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 
-import {​​ MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA }​​ from '@angular/material/bottom-sheet';
+import {
+  MatBottomSheetRef,
+  MAT_BOTTOM_SHEET_DATA,
+} from '@angular/material/bottom-sheet';
 
-
-
-@Component({​​
-
+@Component({
   selector: 'app-prompt-component',
 
   templateUrl: './prompt-component.component.html',
 
-  styleUrls: ['./prompt-component.component.css']
-
-}​​)
-
-export class PromptComponent {​​
-
-
-
+  styleUrls: ['./prompt-component.component.css'],
+})
+export class PromptComponent {
   constructor(
-
-    @Inject(MAT_BOTTOM_SHEET_DATA) public data: {​​ mobileType: 'ios' | 'android', promptEvent?: any }​​,
-
+    @Inject(MAT_BOTTOM_SHEET_DATA)
+    public data: { mobileType: 'ios' | 'android'; promptEvent?: any },
     private bottomSheetRef: MatBottomSheetRef<PromptComponent>
-
-  ) {​​}​​
-
-
-
-  public installPwa(): void {​​
-
+  ) {}
+  public installPwa(): void {
     this.data.promptEvent.prompt();
 
     this.close();
-
-  }​​
-
-
-
-  public close(): void {​​
-
+  }
+  public close(): void {
     this.bottomSheetRef.dismiss();
-
-  }​​
-
+  }
 }
