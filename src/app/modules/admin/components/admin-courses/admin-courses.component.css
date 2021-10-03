@@ -1,13 +1,12 @@
-.table
-{
-    width: 100%;
+.table {
+  width: 100%;
 }
-.course-button
-{
-    margin-bottom: 3%;
+.course-button {
+  margin-bottom: 3%;
 }
 
-td,th {
-    font-weight:bold;
-    font-family:cursive;
-  }
+td,
+th {
+  font-weight: bold;
+  font-family: cursive;
+}
