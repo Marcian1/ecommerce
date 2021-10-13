@@ -3,40 +3,36 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrderService {
+  constructor(private db: AngularFireDatabase) {}
 
-  constructor(private db: AngularFireDatabase) { }
-
-
-  createOrder(order: unknown): any
-  {
-   return this.db.list('/orders').push(order);
-
+  createOrder(order: unknown): any {
+    return this.db.list('/orders').push(order);
   }
 
-  getOrderIdByUserId(userId: string | number | boolean | null): any
-  {
-    return this.db.list('/orders/', ref => ref.orderByChild('userId').equalTo(userId))
-                                  .snapshotChanges()
-                                  .pipe(
-                                    map(idOrders => {
-                                    return  idOrders.map(ids => {
-                                               return ids.key;
-                                      });
-                                    })
-                                  );
+  getOrderIdByUserId(userId: string | number | boolean | null): any {
+    return this.db
+      .list('/orders/', (ref) => ref.orderByChild('userId').equalTo(userId))
+      .snapshotChanges()
+      .pipe(
+        map((idOrders) => {
+          return idOrders.map((ids) => {
+            return ids.key;
+          });
+        })
+      );
   }
 
-  getCoursesByIdOrder(idOrder: string): any
-  {
-    return this.db.object('/orders/' + idOrder + '/items/')
-                 .snapshotChanges()
-                 .pipe(
-                   map(courses => {
-                     return courses.payload.val();
-                   })
-                 );
+  getCoursesByIdOrder(idOrder: string): any {
+    return this.db
+      .object('/orders/' + idOrder + '/items/')
+      .snapshotChanges()
+      .pipe(
+        map((courses) => {
+          return courses.payload.val();
+        })
+      );
   }
 }

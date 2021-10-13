@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 
 @NgModule({
-    declarations: [],
-    imports: [
-
-    ],
-    exports: [],
-    providers: [],
-    bootstrap: []
-  })
-  export class AppModuleUsers {
-  }
+  declarations: [],
+  imports: [],
+  exports: [],
+  providers: [],
+  bootstrap: [],
+})
+export class AppModuleUsers {}
