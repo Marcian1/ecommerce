@@ -1,17 +1,14 @@
-<mat-toolbar color="primary">
-  <span class="fill-remaining-space">
-    <button #r="matMenuTrigger" mat-icon-button [matMenuTriggerFor]="menu">
+<mat-toolbar class="content">
+  <span>
+    <button
+      #r="matMenuTrigger"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      class="button button_hovering"
+    >
       <mat-icon (touch)="open(r)">menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu" [overlapTrigger]="false">
-      <button mat-menu-item [routerLink]="'/'">
-        <mat-icon>home</mat-icon>
-        <span>Home</span>
-      </button>
-      <button mat-menu-item [routerLink]="'/courses'">
-        <mat-icon>library_books</mat-icon>
-        <span>Courses</span>
-      </button>
       <button mat-menu-item *ngIf="!user" (click)="justLogin()">
         <mat-icon>supervised_user_circle</mat-icon>
         <span mat-button *ngIf="!user" (click)="justLogin()"
@@ -34,6 +31,7 @@
         </button>
         <button mat-menu-item (click)="logout()">Logout</button>
       </mat-menu>
+
       <button mat-menu-item [routerLink]="'/about'">
         <mat-icon>description</mat-icon>
         <span mat-button>About</span>
@@ -44,5 +42,20 @@
       </button>
     </mat-menu>
   </span>
-  <span class="fill-remaining-space">Ecommerce</span>
+
+  <span>
+    <button mat-menu-item [routerLink]="'/'" class="button button_hovering">
+      <span>Ambiance</span>
+    </button>
+  </span>
+
+  <span>
+    <button
+      mat-menu-item
+      [routerLink]="'/courses'"
+      class="button button_hovering"
+    >
+      <span>Courses</span>
+    </button>
+  </span>
 </mat-toolbar>
