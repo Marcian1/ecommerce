@@ -1,19 +1,17 @@
-<!--
-    https://cdn.vox-cdn.com/thumbor/Zy8vs864f986wYBEjXy3UfO3K4g=/cdn.vox-cdn.com/uploads/chorus_asset/file/3397242/GIF1_1200x675_v2.0.gif
--->
-
-<head>
-  <style>
-    body {
-      background-image: url("https://cloudinary-res.cloudinary.com/image/upload/Animations_with_HTML5_2000x1100_v2.gif");
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: 100% 100%;
-    }
-  </style>
-</head>
 <body>
-  <main [style.backgroundSize]="'cover'"></main>
-
-  <h2></h2>
+  <picture>
+    <source
+      media="(min-width: 400px)"
+      srcset="
+        https://nationalautismassociation.org/wp-content/uploads/2014/05/simple-amazing-background-1366x768-1080x675.jpg
+      "
+    />
+    <source
+      media="(min-width: 300px)"
+      srcset="
+        https://u01.appmifile.com/images/2020/03/15/f32db24b-ee84-4a77-8648-87f2de530956.png
+      "
+    />
+    <img src="" alt="IfItDoesntMatchAnyMedia" />
+  </picture>
 </body>

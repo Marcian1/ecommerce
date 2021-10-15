@@ -1,5 +1,32 @@
-.shopping-course
-{
-    size: 150%;
-    color: red;
+.shopping-course {
+  size: 150%;
+  color: red;
+}
+
+::ng-deep .mat-toolbar {
+  z-index: 999;
+  position: fixed;
+  background-color: rgba(0, 19, 95);
+}
+
+.content {
+  color: #f2f2f2;
+}
+
+.button {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button_hovering:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid rgba(0, 19, 95);
 }
